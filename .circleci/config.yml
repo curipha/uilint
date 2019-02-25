@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:latest
+    steps:
+      - checkout
+      - restore_cache:
+          key: flake8-application
+      - run:
+          name: Install Flake8 with hacking
+          command: pip install --upgrade --user hacking
+      - run:
+          name: Create package list (for caching)
+          command: pip freeze --user > ./requirement.txt
+      - save_cache:
+          paths:
+            - ~/.local
+          key: flake8-application-{{ checksum "./requirement.txt" }}
+      - run:
+          name: OS release
+          command: cat /etc/debian_version
+      - run:
+          name: Kernel version
+          command: uname -a
+      - run:
+          name: Python version
+          command: python --version
+      - run:
+          name: Flake8 version
+          command: ~/.local/bin/flake8 --version
+      - run:
+          name: Run Flake8
+          command: ~/.local/bin/flake8 --ignore=E111,E114 --show-source --statistics .
