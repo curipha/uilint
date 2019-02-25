@@ -9,7 +9,7 @@
                A static code analyzer for UiPath XAML files
 ```
 
-UiLint
+UiLint [![CircleCI](https://circleci.com/gh/curipha/uilint.svg?style=svg)](https://circleci.com/gh/curipha/uilint)
 =================
 A static code analyzer (linter tool) for UiPath XAML files.
 This program requires Python 3.5 or above.
