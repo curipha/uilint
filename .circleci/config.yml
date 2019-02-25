@@ -8,8 +8,8 @@ jobs:
       - restore_cache:
           key: flake8-application
       - run:
-          name: Install Flake8 with hacking
-          command: pip install --upgrade --user hacking
+          name: Install Flake8
+          command: pip install --upgrade --user flake8
       - run:
           name: Create package list (for caching)
           command: pip freeze --user > ./requirement.txt
