@@ -39,16 +39,18 @@ def lint() -> None:
   ss_file = set(map(lambda f: os.path.splitext(f)[0], os.listdir(ss_dir))) if os.path.isdir(ss_dir) else set() # Stored
 
 
-  # Check existence of project.json file
-  if not os.path.isfile(prjson):
-    error('project.json file does not exist. Are you running this lint program in CI/CD pipeline? It seems project.json is missed to commit.', prjson)
-
   # Get all XAML files including sub-directories
   xamls = glob.iglob('%s/**/*.xaml' % arg.dir, recursive=True)
 
   if not any(xamls):
     print('No XAML files exist in the specified directory.')
     sys.exit(1)
+
+
+  # Check existence of project.json file
+  if not os.path.isfile(prjson):
+    error('project.json file does not exist. Are you running this lint program in CI/CD pipeline? It seems project.json is missed to commit.', prjson)
+
 
   for file in xamls:
     xaml  = etree.parse(file)
