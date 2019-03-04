@@ -3,7 +3,7 @@ import re
 import sys
 import argparse
 import gettext
-import glob # Python >= 3.5
+import glob  # Python >= 3.5
 import subprocess
 from lxml import etree
 
@@ -22,6 +22,7 @@ def error(msg: str, xaml: str = '-') -> None:
   else:
     print('%s: [Error] %s' % (xaml, msg))
 
+
 # Print warning message
 def warn(msg: str, xaml: str = '-') -> None:
   if arg.vsts:
@@ -32,13 +33,12 @@ def warn(msg: str, xaml: str = '-') -> None:
 
 # Linter
 def lint() -> None:
-  ss_dir = '%s/.screenshots' % arg.dir # Path to the directory of screenshots
-  prjson = '%s/project.json' % arg.dir # Path to project.json
+  ss_dir = '%s/.screenshots' % arg.dir  # Path to the directory of screenshots
+  prjson = '%s/project.json' % arg.dir  # Path to project.json
 
   # Set of screenshots (hash only, without extensions)
   ss_xaml = set() # Seen in XAML files
   ss_file = set(map(lambda f: os.path.splitext(f)[0], os.listdir(ss_dir))) if os.path.isdir(ss_dir) else set() # Stored
-
 
   # Get all XAML files including sub-directories
   xamls = glob.iglob('%s/**/*.xaml' % arg.dir, recursive=True)
@@ -47,14 +47,12 @@ def lint() -> None:
     print(_('msg:no-xamls'))
     sys.exit(1)
 
-
   # Check existence of project.json file
   if not os.path.isfile(prjson):
     error(_('rule:no-project-file'))
 
-
   for file in xamls:
-    xaml  = etree.parse(file)
+    xaml = etree.parse(file)
     xpath = etree.XPathEvaluator(xaml, namespaces=uixaml.xamlns)
 
     # Check existence of all screenshots
@@ -193,7 +191,7 @@ def lint() -> None:
 
     for e in andor:
       condition = e.get('Condition').lower()
-      normalized_condition = re.sub(r'".*?"', '', condition) # XXX: Remove texts surrounded by ""
+      normalized_condition = re.sub(r'".*?"', '', condition)  # XXX: Remove texts surrounded by ""
 
       if ' and ' in normalized_condition or ' or ' in normalized_condition:
         error('%s (Activity: %s, Condition: %s)' % (_('rule:no-and-or'), uixaml.displayname(e), condition), file)
@@ -210,7 +208,7 @@ def lint() -> None:
       if selector[:1] == '<':
         # Selector is written in pure selector expression (if this string starts with '[', it is written in VB expression)
         selxml = etree.fromstring('<selector xmlns:omit="omit">%s</selector>' % selector)
-        etree.strip_attributes(selxml, '{omit}*') # Delete attribute with "omit" namespaces
+        etree.strip_attributes(selxml, '{omit}*')  # Delete attribute with "omit" namespaces
         normalized_selector = etree.tostring(selxml, encoding='unicode')
       else:
         normalized_selector = selector
@@ -232,7 +230,7 @@ def lint() -> None:
         ss_path = '%s/%s.png' % (ss_dir, ss)
         print('%s: %s' % (_('msg:remove-screenshot'), ss_path))
 
-        if   arg.remove_screenshots == 'file':
+        if arg.remove_screenshots == 'file':
           os.remove(ss_path)
         elif arg.remove_screenshots == 'vsts':
           subprocess.run('tf delete -jwt:"$SYSTEM_ACCESSTOKEN" "%s"' % ss_path, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
@@ -249,6 +247,7 @@ def lint() -> None:
   else:
     if arg.vsts:
       print('##vso[task.complete result=Succeeded;]')
+
 
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='UiLint - A static code analyzer for UiPath XAML files.')
