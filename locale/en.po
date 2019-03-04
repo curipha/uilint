@@ -1,0 +1,94 @@
+# English translations for uilint
+msgid ""
+msgstr ""
+"Project-Id-Version: uilint\n"
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "msg:directory-not-found"
+msgstr "Specified path is not a directory or does not exist."
+
+msgid "msg:no-xamls"
+msgstr "No XAML files exist in the specified directory."
+
+msgid "msg:remove-screenshot"
+msgstr "Remove screenshot"
+
+msgid "rule:empty-catch"
+msgstr "Found a TryCatch activity with an empty catch. Even if the purpose is to ignore any exceptions, how about logging it?"
+
+msgid "rule:empty-selector-sendhotkey"
+msgstr "Selectors in a SendHotkey activity should not be left blank. Please edit a selector and/or move this activity into any application scopes like Attach Window scope."
+
+msgid "rule:empty-sequence"
+msgstr "Empty Sequence should be removed."
+
+msgid "rule:empty-specialkey"
+msgstr "Found a SendHotkey activity with empty Key. Did you forget to set it?"
+
+msgid "rule:false-specialkey"
+msgstr "This SendHotkey activity may not work as intended because False is set to SpecialKey property."
+
+msgid "rule:kana-typeinto"
+msgstr "This TypeInto activity will fail to input half-width kana. Please replace it by SetText activity or check a SimulateType property."
+
+msgid "rule:kana-typeinto-vb"
+msgstr "This TypeInto activity cannot input half-width kana correctly. Please replace it by SetText activity or check a SimulateType property."
+
+msgid "rule:looped-activity"
+msgstr "Found a looped activity in a Flowchart. An infinite loop may occur."
+
+msgid "rule:max-activities"
+msgstr "Many of activities are included in one Sequence. Please consider splitting the Sequence by functional group."
+
+msgid "rule:messagebox"
+msgstr "Found a MessageBox activity which is not commented out. Did you forget to comment out?"
+
+msgid "rule:nested-if"
+msgstr "If activity nested more than 3 times should be replaced by Flowchart."
+
+msgid "rule:nested-sequence"
+msgstr "Found a nested Sequence. Please remove an outer Sequence."
+
+msgid "rule:no-altf4"
+msgstr "Close Application activity should be used instead of sending Alt-F4 by using SendHotkey activity."
+
+msgid "rule:no-and-or"
+msgstr "It is forbidden to use And/Or in a conditional clause. Please use AndAlso/OrElse instead."
+
+msgid "rule:no-getpassword"
+msgstr "GetPassword activity should not be used because of compatibility issues. Use Assign activity instead."
+
+msgid "rule:no-project-file"
+msgstr "project.json file does not exist. It seems this file is missed to commit to your source code repository."
+
+msgid "rule:no-screenshots"
+msgstr "Screenshot file in use does not exist. It seems a screenshot file is missed to commit to your source code repository."
+
+msgid "rule:no-visible-excel"
+msgstr "Visible property on Excel Application Scope should be unchecked if there is no need to show an Excel application on the screen."
+
+msgid "rule:remove-screenshots"
+msgstr "Unused screenshot file(s) will be removed."
+
+msgid "rule:run-browser"
+msgstr "Web browser should be launched via Open Browser activity not via OpenApplication/StartProcess activity."
+
+msgid "rule:run-excel"
+msgstr "Excel application should be launched via Excel Application Scope not via OpenApplication/StartProcess activity."
+
+msgid "rule:run-word"
+msgstr "Word application should be launched via Word Application Scope not via OpenApplication/StartProcess activity."
+
+msgid "rule:selector-extensions"
+msgstr "A selector contains an extension-like string. Please replace it by * so that it works in the environment which hides extensions."
+
+msgid "rule:selector-windowsforms"
+msgstr "Window classes starting with 'WindowsForms10' should not be used as a selector because they may change due to application version change."
+
+msgid "rule:terminateworkflow"
+msgstr "Found a TerminateWorkflow activity which is not commented out. Did you forget to comment out?"
+
+msgid "rule:workbook-in-excel"
+msgstr "Do not use a Workbook activity in the Excel Application Scope. Only Excel activities is adequate inside the Excel Application Scope."

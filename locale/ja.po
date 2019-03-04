@@ -1,0 +1,94 @@
+# Japanese translations for uilint
+msgid ""
+msgstr ""
+"Project-Id-Version: uilint\n"
+"Language: ja\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "msg:directory-not-found"
+msgstr "指定されたパスはディレクトリではないか、存在していません。"
+
+msgid "msg:no-xamls"
+msgstr "チェック対象の XAML ファイルがありませんでした"
+
+msgid "msg:remove-screenshot"
+msgstr "スクリーンショットを削除しました"
+
+msgid "rule:empty-catch"
+msgstr "空の Catch をもつ TryCatch があります。例外を無視するのが目的でもせめてログぐらいは記録しましょう。"
+
+msgid "rule:empty-selector-sendhotkey"
+msgstr "セレクタが空の SendHotkey アクティビティがあります。セレクタを設定するか Attach Window などのスコープに格納するのを検討してください。"
+
+msgid "rule:empty-sequence"
+msgstr "空の Sequence は削除してください。"
+
+msgid "rule:empty-specialkey"
+msgstr "Key が空の SendHotkey アクティビティがあります。設定を忘れていませんか？"
+
+msgid "rule:false-specialkey"
+msgstr "SpecialKey のチェックがついていない SendHotkey アクティビティがあります。キー入力が意図通りに行われない可能性があります。"
+
+msgid "rule:kana-typeinto"
+msgstr "半角カタカナを入力している TypeInto アクティビティがあります。この設定では正しく入力できません。SetText アクティビティを利用するか、SimulateType をチェックしてください。"
+
+msgid "rule:kana-typeinto-vb"
+msgstr "半角カタカナを正しく入力できない可能性のある TypeInto アクティビティがあります。SetText アクティビティを利用するか、SimulateType をチェックするのを検討してください。"
+
+msgid "rule:looped-activity"
+msgstr "Flowchart においてループしているアクティビティがあります。無限ループが発生する可能性があります。"
+
+msgid "rule:max-activities"
+msgstr "アクティビティを多数含む Sequence があります。Sequence を機能のまとまりで分割するのを検討してください。"
+
+msgid "rule:messagebox"
+msgstr "コメントアウトされていない MessageBox アクティビティがあります。コメントアウトを忘れていませんか？"
+
+msgid "rule:nested-if"
+msgstr "三重以上にネストした If があります。フローチャートの利用を検討してください。"
+
+msgid "rule:nested-sequence"
+msgstr "二重にネストした Sequence があります。外側の Sequence を削除してください。"
+
+msgid "rule:no-altf4"
+msgstr "Alt-F4 を送っている SendHotkey アクティビティがあります。Close Application アクティビティを利用してください。"
+
+msgid "rule:no-and-or"
+msgstr "条件文に And もしくは Or が使われています。AndAlso または OrElse を使いましょう。"
+
+msgid "rule:no-getpassword"
+msgstr "GetPassword アクティビティは互換性の問題があるので使用してはいけません。パスワードは変数に Assign で代入してください。"
+
+msgid "rule:no-project-file"
+msgstr "project.json ファイルがありません。リポジトリへのコミットを忘れていませんか？"
+
+msgid "rule:no-screenshots"
+msgstr "利用されているスクリーンショットファイルがありません。リポジトリへのコミットを忘れていませんか？"
+
+msgid "rule:no-visible-excel"
+msgstr "Visible がチェックされている Excel Application Scope があります。画面上に Excel を表示する必要がない場合は、Visible のチェックを外してください。"
+
+msgid "rule:remove-screenshots"
+msgstr "使われていないスクリーンショットは削除されます。"
+
+msgid "rule:run-browser"
+msgstr "OpenApplication/StartProcess アクティビティから Web ブラウザを起動させています。Web ブラウザを操作する場合は、Open Browser アクティビティを利用してください。"
+
+msgid "rule:run-excel"
+msgstr "OpenApplication/StartProcess アクティビティから Excel を起動させています。Excel を操作する場合は、Excel Application Scope を利用してください。"
+
+msgid "rule:run-word"
+msgstr "OpenApplication/StartProcess アクティビティから Word を起動させています。Word を操作する場合は、Word Application Scope を利用してください。"
+
+msgid "rule:selector-extensions"
+msgstr "セレクタに拡張子のような文字列が含まれています。拡張子が非表示の環境でも動作するようにセレクタの拡張子部分をワイルドカードにしてください。"
+
+msgid "rule:selector-windowsforms"
+msgstr "WindowsForms10 で始まるウィンドウクラスはアプリケーションのバージョンアップなどで変化するためセレクタに使用してはいけません。セレクタから削除してください。"
+
+msgid "rule:terminateworkflow"
+msgstr "コメントアウトされていない TerminateWorkflow アクティビティがあります。コメントアウトを忘れていませんか？"
+
+msgid "rule:workbook-in-excel"
+msgstr "Excel Application Scope 内で Workbook アクティビティが利用されています。Excel Application Scope では Excel アクティビティを利用してください。"
