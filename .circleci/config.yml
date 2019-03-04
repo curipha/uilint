@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: flake8-application
+          key: lint-flake8
       - run:
           name: Install Flake8
           command: pip install --upgrade --user flake8
@@ -16,7 +16,7 @@ jobs:
       - save_cache:
           paths:
             - ~/.local
-          key: flake8-application-{{ checksum "./requirement.txt" }}
+          key: lint-flake8-{{ checksum "./requirement.txt" }}
       - run:
           name: OS release
           command: cat /etc/debian_version
