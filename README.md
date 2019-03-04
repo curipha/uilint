@@ -16,12 +16,11 @@ This program requires Python 3.5 or above.
 
 Installation
 -----------------
-1. Download this repository to local computer
+1. Download this repository to your computer
 2. Run `make mo`
-3. That's all
 
 Step 2 was failed (or simply forgot to do) if you see the following message.
-Please check `gettext` package is installed to your computer and re-run `make mo`.
+Please make sure `gettext` package is installed to your computer and re-run `make mo`.
 
 ```
 FileNotFoundError: [Errno 2] No translation file found for domain: 'messages'
@@ -54,7 +53,7 @@ If there is an update for something, simply revise these PO files (and create MO
 Create a new PO file for not-translated languages to add a new language translation.
 
 1. Add new language code to `langs` variable in `Makefile`
-  - Language codes are listed on the [manual](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) of `gettext`.
+    - Language codes are listed on the [manual](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) of `gettext`.
 2. Run `make po`
 3. New PO file (contains a language code as a its file name) will be created in the `locale` directory
 4. Edit it
