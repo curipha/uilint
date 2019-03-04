@@ -252,7 +252,7 @@ def lint() -> None:
 if __name__ == '__main__':
   parser = argparse.ArgumentParser(description='UiLint - A static code analyzer for UiPath XAML files.')
   parser.add_argument('dir', help='Specify a directory of UiPath project. (default: current directory)', nargs='?', default='.')
-  parser.add_argument('--vsts', help='Output in VSTS log format.', action='store_true') # ref. VSTS Log syntax: https://github.com/Microsoft/vsts-tasks/blob/master/docs/authoring/commands.md
+  parser.add_argument('--vsts', help='Output in VSTS log format.', action='store_true') # VSTS Log syntax: https://github.com/Microsoft/vsts-tasks/blob/master/docs/authoring/commands.md
   parser.add_argument('--nologo', help='Do NOT display a logo.', action='store_false', dest='logo')
   parser.add_argument('--remove-screenshots', help='Remove unused screenshots from Version control system.', choices=['dryrun', 'file', 'vsts'])
   arg = parser.parse_args()
