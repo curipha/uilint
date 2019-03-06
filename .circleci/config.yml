@@ -31,4 +31,4 @@ jobs:
           command: ~/.local/bin/flake8 --version
       - run:
           name: Run Flake8
-          command: ~/.local/bin/flake8 --ignore=E111,E114 --show-source --statistics .
+          command: ~/.local/bin/flake8 --ignore=E111,E114,E121 --max-line-length=100 --show-source --statistics .
