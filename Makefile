@@ -18,7 +18,7 @@ mo:
 	for lang in $(langs); do \
 		langdir="$(localedir)/$${lang}/LC_MESSAGES"; \
 		mkdir -p "$${langdir}"; \
-		msgfmt --output-file "$${langdir}/$(domain).mo" "$(localedir)/$${lang}.po"; \
+		msgfmt --verbose --output-file "$${langdir}/$(domain).mo" "$(localedir)/$${lang}.po"; \
 	done
 
 .PHONY: po
