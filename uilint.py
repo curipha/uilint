@@ -27,7 +27,7 @@ class MessageCategory(enum.Enum):
 # Linter class for the project
 class Project:
   def __init__(self, projectdir: str) -> None:
-    # Errors/Warnings (should be accesed via self.results() method)
+    # Errors/Warnings (should be accessed via self.results() method)
     self._results = []
 
     # Path to project directory
@@ -45,7 +45,7 @@ class Project:
     # Get all XAML files including sub-directories
     self.xamlfiles = glob(os.path.join(projectdir, '**', '*.xaml'), recursive=True)
 
-    # XAML file linter objects
+    # List of XAML classes for each XAML file
     self.xamls = []
 
     # Set of screenshots in the project (hash only, without extensions)
@@ -435,7 +435,7 @@ class XAML:
       else:
         normalized_selector = selector
 
-      # Tip: Other rules can be implementd here.
+      # Tip: Other rules can be implemented here.
       # e.g. Forbid user id like string, test environment identifier, test user id, etc...
 
       # Selector incl. extensions
@@ -579,7 +579,7 @@ if __name__ == '__main__':
             stderr=subprocess.DEVNULL
           )
 
-    # Finalizer
+    # Finalize
     if iserror:
       if arg.vsts:
         print('##vso[task.complete result=Failed;]')
