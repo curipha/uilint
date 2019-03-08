@@ -69,7 +69,7 @@ msgstr "利用されているスクリーンショットファイルがありま
 msgid "rule:no-visible-excel"
 msgstr "Visible がチェックされている Excel Application Scope があります。画面上に Excel を表示する必要がない場合は、Visible のチェックを外してください。"
 
-msgid "rule:remove-screenshots"
+msgid "msg:remove-screenshots"
 msgstr "使われていないスクリーンショットは削除されます。"
 
 msgid "rule:run-browser"

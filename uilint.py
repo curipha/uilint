@@ -555,7 +555,7 @@ if __name__ == '__main__':
       ss_diff = prj.stored_screenshots() - prj.inuse_screenshots()
 
       if any(ss_diff):
-        print(_('rule:remove-screenshots'))
+        print(_('msg:remove-screenshots'))
 
         for ss in ss_diff:
           ss_path = prj.screenshot_path(ss)
