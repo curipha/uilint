@@ -19,8 +19,8 @@ Installation
 1. Download this repository to your computer
 2. Run `make mo`
 
-Step 2 was failed (or simply forgot to do) if you see the following message.
-Please make sure `gettext` package is installed to your computer and re-run `make mo`.
+If you see the following message, step 2 was failed (or simply forgot to do).
+Please make sure `gettext` package is installed to your computer and run `make mo` again.
 
 ```
 FileNotFoundError: [Errno 2] No translation file found for domain: 'messages'
@@ -39,7 +39,7 @@ To Do
 - [ ] Python Packaging
 - [x] i18n (messages)
 - [ ] Revise error messages
-- [ ] Introduce a Plug-in architecture for checking rules
+- [ ] Introduce a Plug-in architecture for rules
 - [ ] Test for rules
 - [ ] Configuration for rules
 
@@ -50,7 +50,7 @@ Translation texts are defined in `locale/(lang).po` files.
 If there is an update for something, simply revise these PO files (and create MO files via `make mo`).
 
 ### Add a new language translation
-Create a new PO file for not-translated languages to add a new language translation.
+Create a new PO file for non-translated languages to add a new language translation.
 
 1. Add new language code to `langs` variable in `Makefile`
     - Language codes are listed on the [manual](https://www.gnu.org/software/gettext/manual/html_node/Usual-Language-Codes.html) of `gettext`.
@@ -71,7 +71,7 @@ Create a new PO file for not-translated languages to add a new language translat
 (Guide for Japanese) 日本語の説明
 ----------------------
 UiPath が出力する XAML ファイル用のコードチェックツール（コードアナライザ）です．
-ありがちな間違いを見つけて警告してくれます．英語で．
+ありがちな間違いを見つけて警告してくれます．
 
 Python 3.5 かそれ以上が必要です．
 
